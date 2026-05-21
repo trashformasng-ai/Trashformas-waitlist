@@ -1,19 +1,8 @@
 {
-      "name": "trashformas-biogas",
-        "version": "1.0.0",
-          "private": true,
-            "scripts": {
-                "dev": "vite",
-                    "build": "vite build",
-                        "preview": "vite preview"
-                          },
-                            "dependencies": {
-                                "react": "^18.2.0",
-                                    "react-dom": "^18.2.0"
-                                      },
-                                        "devDependencies": {
-                                            "@vitejs/plugin-react": "^4.2.1",
-                                                "vite": "^5.1.0"
-                                                  }
-                                                  }
-}
+  "name": "trashformas-waitlist",
+  "version": "1.0.0",
+  "dependencies": {
+    "some-package": "^1.0.0"
+  }
+} 
+// <-- Make sure there is absolutely NOTHING down here, not even a comment!
