@@ -4,5 +4,4 @@
   "dependencies": {
     "some-package": "^1.0.0"
   }
-} 
-// <-- Make sure there is absolutely NOTHING down here, not even a comment!
+}
