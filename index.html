@@ -518,7 +518,7 @@ async function submitForm() {
 
   try {
     const [r1,r2] = await Promise.allSettled([
-      fetch('https://forminit.com/f/463mmpz58h6',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(payload)}),
+      fetch('https://forminit.com/f/imrq43myemt',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(payload)}),
       fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({access_key:'20e4afa7-ff1a-46e8-a900-8da9ddca94c5',subject:'New Trashformas Waitlist Signup — '+name,from_name:'Trashformas Waitlist',...payload})})
     ]);
     const ok = (r1.status==='fulfilled'&&r1.value?.ok)||(r2.status==='fulfilled'&&r2.value?.ok);
