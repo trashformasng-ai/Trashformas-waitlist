@@ -4,14 +4,16 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <title>Trashformas Biogas</title>
-<meta name="description" content="Reserve pre-filled biogas cylinders at ₦1,015/kg — up to 20% more cook time than traditional LPG."/>
+<meta name="description" content="Reserve pre-filled biogas cylinders at ₦1,100/kg — up to 20% more cook time than traditional LPG at ₦1,500/kg."/>
 <meta name="theme-color" content="#0e1a0e"/>
 <meta name="mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
-<meta name="apple-mobile-web-app-title" content="Trashformas"/>
+<meta name="apple-mobile-web-app-title" content="Trashformas Biogas"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<!-- Tally embed script -->
+<script src="https://tally.so/widgets/embed.js" async></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -24,130 +26,40 @@ input,select,textarea,button{font-family:inherit}
 ::-webkit-scrollbar-thumb{background:#aeeaae;border-radius:4px}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.75)}}
-
 .btn-primary{width:100%;background:linear-gradient(135deg,#226e22,#3da83d);color:#fff;border:none;border-radius:14px;padding:17px 20px;font-size:15px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:space-between;box-shadow:0 6px 20px rgba(46,139,46,.35);transition:transform .15s;font-family:inherit}
 .btn-primary:hover{transform:translateY(-2px)}
-.btn-primary:disabled{background:#c8e6c9;box-shadow:none;cursor:not-allowed;transform:none}
 .btn-ghost{width:100%;background:rgba(255,255,255,.07);color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:16px 20px;font-size:14px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:space-between;transition:background .15s;font-family:inherit}
 .btn-ghost:hover{background:rgba(255,255,255,.12)}
-
 .dark-hdr{background:#0e1a0e;padding:24px 22px 40px;position:relative;overflow:hidden}
-.dark-hdr-glow{position:absolute;inset:0;background:radial-gradient(ellipse 65% 100% at 92% 50%,rgba(46,139,46,.25) 0%,transparent 60%);pointer-events:none}
 .back-btn{background:none;border:none;color:rgba(255,255,255,.5);font-family:inherit;font-size:13px;cursor:pointer;padding:0;margin-bottom:18px}
-
-.inp{width:100%;background:#f0faf0;border:1.5px solid #d6f5d6;border-radius:10px;padding:13px 15px;font-size:15px;color:#0e1a0e;outline:none;box-sizing:border-box;transition:border-color .15s,background .15s;font-family:inherit}
+.inp{width:100%;background:#f0faf0;border:1.5px solid #d6f5d6;border-radius:10px;padding:13px 15px;font-size:15px;color:#0e1a0e;outline:none;box-sizing:border-box;transition:border-color .15s;font-family:inherit}
 .inp:focus{border-color:#3da83d;background:#fff}
 .card{background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:16px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
 .sec-label{font-size:10.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:rgba(14,26,14,0.5);margin-bottom:10px}
-
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:#0e1a0e;color:#fff;border-radius:10px;padding:13px 22px;font-size:13.5px;font-weight:500;box-shadow:0 8px 32px rgba(0,0,0,.22);z-index:9999;white-space:nowrap;transition:transform .3s cubic-bezier(.22,1,.36,1)}
 .toast.show{transform:translateX(-50%) translateY(0)}
-
-/* WELCOME */
 #welcome{background:#0e1a0e;color:#fff;position:relative;overflow:hidden}
 .welcome-glow{position:absolute;inset:0;background:radial-gradient(ellipse 75% 55% at 12% 22%,rgba(46,139,46,.38) 0%,transparent 55%),radial-gradient(ellipse 55% 65% at 88% 78%,rgba(26,92,26,.32) 0%,transparent 55%);pointer-events:none}
 .welcome-inner{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;padding:0 22px;max-width:480px;margin:0 auto;width:100%}
 .nav-bar{display:flex;align-items:center;justify-content:space-between;padding-top:26px}
-.logo{display:flex;align-items:center;gap:9px}
-.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,#2e8b2e,#56c456);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:17px}
-.logo-text{font-weight:800;font-size:18px;letter-spacing:-.3px}
+.logo{display:flex;align-items:center;gap:10px}
 .badge{display:flex;align-items:center;gap:5px;background:rgba(76,175,80,.15);border:1px solid rgba(76,175,80,.3);border-radius:100px;padding:5px 11px;font-size:11px;color:#7dd87d;font-weight:500}
 .badge-dot{width:6px;height:6px;background:#4caf50;border-radius:50%;animation:pulse 2s infinite}
-.hero{flex:1;display:flex;flex-direction:column;justify-content:center;padding:26px 0 14px}
-.eyebrow{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#7dd87d;font-weight:600;margin-bottom:18px;display:flex;align-items:center;gap:10px}
-.eyebrow-line{width:26px;height:1px;background:#56c456}
-h1{font-size:clamp(32px,8vw,46px);font-weight:900;line-height:1.05;letter-spacing:-1.5px;margin-bottom:18px}
 .accent{background:linear-gradient(90deg,#56c456,#aeeaae);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{font-size:14px;line-height:1.75;color:rgba(255,255,255,.58);margin-bottom:24px;font-weight:300}
-.stats-card{background:rgba(255,255,255,.04);border:1px solid rgba(76,175,80,.18);border-radius:15px;padding:18px;margin-bottom:22px}
-.stats-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd87d;margin-bottom:12px;opacity:.85}
-.stats-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
-.stat-item{background:rgba(76,175,80,.09);border:1px solid rgba(76,175,80,.12);border-radius:11px;padding:13px 7px;text-align:center}
-.stat-val{font-weight:900;font-size:17px;color:#56c456;line-height:1;margin-bottom:4px}
-.stat-val.emoji{font-size:22px}
-.stat-desc{font-size:9.5px;color:rgba(255,255,255,.42);line-height:1.3}
-.how-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd87d;margin-bottom:12px;opacity:.85}
-.how-steps{margin-bottom:26px}
-.how-step{display:flex;align-items:flex-start;gap:11px;margin-bottom:9px}
-.step-num{width:21px;height:21px;min-width:21px;background:rgba(76,175,80,.18);border:1px solid rgba(76,175,80,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9.5px;font-weight:800;color:#56c456}
-.step-txt{font-size:13.5px;color:rgba(255,255,255,.62);line-height:1.55}
-.ctas{padding-bottom:40px;display:flex;flex-direction:column;gap:11px}
-
-/* SUCCESS */
 #success{background:#0e1a0e;color:#fff;align-items:center;justify-content:center;padding:40px 22px;position:relative;overflow:hidden}
 .success-glow{position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 15% 28%,rgba(46,139,46,.38) 0%,transparent 55%);pointer-events:none}
 .success-inner{position:relative;z-index:1;max-width:360px;width:100%;text-align:center}
-.success-icon{width:78px;height:78px;background:linear-gradient(135deg,#226e22,#3da83d);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:35px;margin:0 auto 26px;box-shadow:0 12px 40px rgba(46,139,46,.45)}
-.success-pos{background:rgba(76,175,80,.1);border:1px solid rgba(76,175,80,.22);border-radius:14px;padding:17px 22px;margin-bottom:16px}
-.pos-label{font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:#7dd87d;margin-bottom:7px;font-weight:600}
-.pos-num{font-weight:900;font-size:38px;line-height:1}
-.success-note{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:13px;padding:13px 17px;margin-bottom:28px;font-size:13px;color:rgba(255,255,255,.5);line-height:1.65}
-
-/* EXPLORE */
 #explore{background:#f7f5f0}
-.explore-hdr-inner{position:relative;z-index:1}
-.explore-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:18px}
-.explore-stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:11px 7px;text-align:center}
-.explore-stat-val{font-weight:900;font-size:14px;color:#7dd87d;line-height:1;margin-bottom:2px}
-.explore-stat-lbl{font-size:9.5px;color:rgba(255,255,255,.42)}
 .tabs{background:#fff;border-bottom:1px solid #ececec;padding:0 22px;display:flex}
 .tab{flex:1;background:none;border:none;padding:14px 8px;font-size:14px;font-weight:600;cursor:pointer;transition:all .15s;font-family:inherit}
 .tab.active{border-bottom:2.5px solid #2e8b2e;color:#226e22}
 .tab.inactive{border-bottom:2.5px solid transparent;color:rgba(14,26,14,0.5)}
 .explore-body{flex:1;overflow-y:auto;padding:22px 20px 54px;max-width:480px;margin:0 auto;width:100%}
-.pricing-card{background:linear-gradient(135deg,#0d3b0d,#226e22);border-radius:15px;padding:20px;color:#fff;margin-bottom:20px}
-.pricing-title{font-size:10px;opacity:.6;text-transform:uppercase;letter-spacing:.8px;margin-bottom:13px;font-weight:700}
-.pricing-cols{display:flex;gap:18px}
-.pricing-col-lbl{font-size:10px;opacity:.55;margin-bottom:5px;text-transform:uppercase;letter-spacing:.4px}
-.pricing-price{font-weight:900;font-size:21px;line-height:1;margin-bottom:4px}
-.pricing-note{font-size:11px;opacity:.6;line-height:1.4}
-.pricing-tag{background:rgba(255,255,255,.13);border-radius:8px;padding:5px 11px;font-size:11.5px;font-weight:600;display:inline-block;margin-top:14px}
-.feature-list{display:flex;flex-direction:column;gap:10px;margin-bottom:22px}
-.feature-card{display:flex;gap:13px;align-items:flex-start}
-.feature-icon{width:46px;height:46px;min-width:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:21px}
-.feature-title{font-weight:800;font-size:14px;margin-bottom:3px}
-.feature-desc{font-size:13px;color:rgba(14,26,14,0.5);line-height:1.55}
 .feature-badge{display:inline-block;font-size:10px;font-weight:700;border-radius:5px;padding:2px 7px;margin-top:7px}
 .badge-live{background:#dcfce7;color:#166534}
 .badge-soon{background:#fef3c7;color:#92400e}
-
-/* RESERVATION */
-.res-tracker{display:flex;gap:10px;margin-bottom:18px}
 .res-slot{flex:1;border-radius:11px;padding:11px 9px;text-align:center}
-.res-slot-icon{font-size:19px;margin-bottom:2px}
-.res-slot-lbl{font-size:10px;font-weight:700}
-.res-info{flex:2.5;padding:11px 13px}
-.res-info-lbl{font-size:11px;color:rgba(14,26,14,0.5);margin-bottom:2px}
-.res-info-val{font-weight:900;font-size:18px}
-.res-info-sub{font-size:10.5px;margin-top:2px}
-.size-grid{display:flex;gap:8px;margin-bottom:18px}
-.size-btn{flex:1;border-radius:11px;padding:13px 6px;cursor:pointer;text-align:center;font-family:inherit;transition:all .15s;border:2px solid}
-.size-btn-val{font-weight:900;font-size:16px;margin-bottom:3px}
-.size-btn-price{font-size:11px;opacity:.7}
-.qty-card{margin-bottom:18px;display:flex;align-items:center;justify-content:space-between}
-.qty-btn{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:21px;cursor:pointer}
-.qty-val{text-align:center}
-.qty-num{font-weight:900;font-size:30px;line-height:1}
-.qty-lbl{font-size:12px;color:rgba(14,26,14,0.5)}
-.order-summary{background:#f0faf0;border:1px solid #d6f5d6;margin-bottom:20px}
-.order-row{display:flex;justify-content:space-between;margin-bottom:8px;font-size:14px}
-.order-total{display:flex;justify-content:space-between;padding-top:10px;border-top:1px solid #d6f5d6}
-.station-card{background:linear-gradient(135deg,#0d3b0d,#226e22);border-radius:15px;padding:20px;color:#fff;margin-bottom:16px}
-.station-lbl{font-size:10px;opacity:.6;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:11px;font-weight:700}
-.station-name{font-weight:900;font-size:17px;margin-bottom:3px}
-.station-addr{font-size:13px;opacity:.75;margin-bottom:16px}
-.station-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px}
-.station-stat{background:rgba(255,255,255,.12);border-radius:10px;padding:11px 7px;text-align:center}
-.station-stat-icon{font-size:17px;margin-bottom:3px}
-.station-stat-val{font-weight:900;font-size:13px;line-height:1;margin-bottom:2px}
-.station-stat-lbl{font-size:9.5px;opacity:.6}
-.buffer-note{background:#fef3c7;border:1px solid #fcd34d;border-radius:11px;padding:11px 15px;margin-bottom:16px;font-size:13px;color:#78350f;line-height:1.65}
-.summary-card{background:#f0faf0;border:1px solid #d6f5d6;margin-bottom:18px}
-.summary-title{font-weight:800;font-size:14px;margin-bottom:12px}
-.summary-row{display:flex;justify-content:space-between;margin-bottom:9px;font-size:13px}
-.confirmed-icon{width:70px;height:70px;background:linear-gradient(135deg,#226e22,#3da83d);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:31px;margin:0 auto 20px;box-shadow:0 10px 36px rgba(46,139,46,.45)}
-.locating{display:flex;flex-direction:column;align-items:center;padding:50px 0;text-align:center}
-.spinner{width:58px;height:58px;border:4px solid #d6f5d6;border-top-color:#2e8b2e;border-radius:50%;animation:spin 1s linear infinite;margin-bottom:20px}
+.spinner-sm{width:58px;height:58px;border:4px solid #d6f5d6;border-top-color:#2e8b2e;border-radius:50%;animation:spin 1s linear infinite;margin-bottom:20px}
 </style>
 </head>
 <body>
@@ -159,36 +71,46 @@ h1{font-size:clamp(32px,8vw,46px);font-weight:900;line-height:1.05;letter-spacin
   <div class="welcome-inner">
     <div class="nav-bar">
       <div class="logo">
-        <svg width="38" height="34" viewBox="0 0 114 102" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M57 4C36 4 18 18 12 38L28 44C32 28 43 20 57 20C71 20 82 28 86 44L72 44L86 58L100 44C94 18 78 4 57 4Z" fill="#1a5c1a"/><path d="M57 98C78 98 96 84 102 64L86 58C82 74 71 82 57 82C43 82 32 74 28 58L42 58L28 44L14 58C20 84 36 98 57 98Z" fill="#8dc63f"/><path d="M28 58L14 58L28 44L42 58Z" fill="#1a5c1a"/><path d="M86 44L100 44L86 58L72 44Z" fill="#8dc63f"/></svg>
-        <span class="logo-text" style="color:#fff">Trashformas</span>
+        <svg width="38" height="34" viewBox="0 0 100 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 43 A45 43 0 0 1 95 43 L75 43 A25 23 0 0 0 25 43 Z" fill="#1A6D19"/>
+          <path d="M75 43 L95 43 L78 60 L62 43 Z" fill="#1A6D19"/>
+          <path d="M95 43 A45 43 0 0 1 5 43 L25 43 A25 23 0 0 0 75 43 Z" fill="#8BB852"/>
+          <path d="M25 43 L5 43 L22 26 L38 43 Z" fill="#8BB852"/>
+        </svg>
+        <span style="font-weight:800;font-size:18px;letter-spacing:-.3px;color:#fff">Trashformas Biogas</span>
       </div>
-      <div class="badge">
-        <div class="badge-dot"></div>
-        Launching Soon
-      </div>
+      <div class="badge"><div class="badge-dot"></div>Launching Soon</div>
     </div>
-    <div class="hero">
-      <div class="eyebrow"><div class="eyebrow-line"></div>Rethinking Waste</div>
-      <h1>Waste into<br><span class="accent">cooking gas.</span><br>Cleaner &amp; cheaper.</h1>
-      <p class="hero-sub">Biogas converted from organic waste — available at <strong style="color:#7dd87d">₦1,015/kg</strong>. Reserve a pre-filled cylinder via app, collect from your nearest station, and enjoy <strong style="color:#7dd87d">up to 20% more cook time</strong> per kg than traditional LPG.</p>
-      <div class="stats-card">
-        <div class="stats-label">⚡ Why Trashformas gas is better</div>
-        <div class="stats-grid">
-          <div class="stat-item"><div class="stat-val">₦1,015</div><div class="stat-desc">per kg</div></div>
-          <div class="stat-item"><div class="stat-val">+20%</div><div class="stat-desc">more cook time</div></div>
-          <div class="stat-item"><div class="stat-val emoji">🌱</div><div class="stat-desc">carbon-negative</div></div>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:26px 0 14px">
+      <div style="font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#7dd87d;font-weight:600;margin-bottom:18px;display:flex;align-items:center;gap:10px">
+        <div style="width:26px;height:1px;background:#56c456"></div>Rethinking Waste
+      </div>
+      <h1 style="font-size:clamp(32px,8vw,46px);font-weight:900;line-height:1.05;letter-spacing:-1.5px;margin-bottom:18px">
+        Waste into<br><span class="accent">cooking gas.</span><br>Cleaner & cheaper.
+      </h1>
+      <p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,.58);margin-bottom:24px;font-weight:300">
+        Biogas converted from organic waste — available at <strong style="color:#7dd87d">₦1,100/kg</strong>. Reserve a pre-filled cylinder via app, collect from your nearest station, and enjoy <strong style="color:#7dd87d">up to 20% more cook time</strong> per kg than traditional LPG at <strong style="color:#7dd87d">₦1,500/kg</strong>.
+      </p>
+      <div style="background:rgba(255,255,255,.04);border:1px solid rgba(76,175,80,.18);border-radius:15px;padding:18px;margin-bottom:22px">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd87d;margin-bottom:12px;opacity:.85">⚡ Why Trashformas gas is better</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+          <div style="background:rgba(76,175,80,.09);border:1px solid rgba(76,175,80,.12);border-radius:11px;padding:13px 7px;text-align:center"><div style="font-weight:900;font-size:16px;color:#56c456;line-height:1;margin-bottom:4px">₦1,100</div><div style="font-size:9.5px;color:rgba(255,255,255,.42);line-height:1.3">per kg biogas</div></div>
+          <div style="background:rgba(76,175,80,.09);border:1px solid rgba(76,175,80,.12);border-radius:11px;padding:13px 7px;text-align:center"><div style="font-weight:900;font-size:16px;color:#56c456;line-height:1;margin-bottom:4px">+20%</div><div style="font-size:9.5px;color:rgba(255,255,255,.42);line-height:1.3">more cook time</div></div>
+          <div style="background:rgba(76,175,80,.09);border:1px solid rgba(76,175,80,.12);border-radius:11px;padding:13px 7px;text-align:center"><div style="font-weight:900;font-size:22px;color:#56c456;line-height:1;margin-bottom:4px">🌱</div><div style="font-size:9.5px;color:rgba(255,255,255,.42);line-height:1.3">carbon-negative</div></div>
         </div>
       </div>
-      <div class="how-label">📱 How it works</div>
-      <div class="how-steps">
-        <div class="how-step"><div class="step-num">1</div><span class="step-txt">Reserve a pre-filled cylinder via the app (max 2/day)</span></div>
-        <div class="how-step"><div class="step-num">2</div><span class="step-txt">App finds your nearest pickup station via GPS</span></div>
-        <div class="how-step"><div class="step-num">3</div><span class="step-txt">See your estimated travel time + 5-min buffer</span></div>
-        <div class="how-step"><div class="step-num">4</div><span class="step-txt">Drive to the station &amp; collect your cylinder</span></div>
+      <div style="margin-bottom:26px">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#7dd87d;margin-bottom:12px;opacity:.85">📱 How it works</div>
+        <div style="display:flex;flex-direction:column;gap:9px">
+          <div style="display:flex;align-items:flex-start;gap:11px"><div style="width:21px;height:21px;min-width:21px;background:rgba(76,175,80,.18);border:1px solid rgba(76,175,80,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9.5px;font-weight:800;color:#56c456">1</div><span style="font-size:13.5px;color:rgba(255,255,255,.62);line-height:1.55">Reserve a pre-filled cylinder via the app (max 2/day)</span></div>
+          <div style="display:flex;align-items:flex-start;gap:11px"><div style="width:21px;height:21px;min-width:21px;background:rgba(76,175,80,.18);border:1px solid rgba(76,175,80,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9.5px;font-weight:800;color:#56c456">2</div><span style="font-size:13.5px;color:rgba(255,255,255,.62);line-height:1.55">App finds your nearest pickup station via GPS</span></div>
+          <div style="display:flex;align-items:flex-start;gap:11px"><div style="width:21px;height:21px;min-width:21px;background:rgba(76,175,80,.18);border:1px solid rgba(76,175,80,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9.5px;font-weight:800;color:#56c456">3</div><span style="font-size:13.5px;color:rgba(255,255,255,.62);line-height:1.55">See your estimated travel time + 5-min buffer</span></div>
+          <div style="display:flex;align-items:flex-start;gap:11px"><div style="width:21px;height:21px;min-width:21px;background:rgba(76,175,80,.18);border:1px solid rgba(76,175,80,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9.5px;font-weight:800;color:#56c456">4</div><span style="font-size:13.5px;color:rgba(255,255,255,.62);line-height:1.55">Drive to the station & collect your cylinder</span></div>
+        </div>
       </div>
     </div>
-    <div class="ctas">
-      <button class="btn-primary" onclick="goTo('waitlist')"><span>Join the Waitlist</span><span>→</span></button>
+    <div style="padding-bottom:40px;display:flex;flex-direction:column;gap:11px">
+      <button class="btn-primary" onclick="goTo('waitlist')"><span>Join the Waitlist</span><span style="font-size:18px">→</span></button>
       <button class="btn-ghost" onclick="goTo('explore')"><span>Explore the App</span><span>↗</span></button>
     </div>
   </div>
@@ -197,99 +119,63 @@ h1{font-size:clamp(32px,8vw,46px);font-weight:900;line-height:1.05;letter-spacin
 <!-- WAITLIST -->
 <div id="waitlist" class="screen">
   <div class="dark-hdr">
-    <div class="dark-hdr-glow"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 65% 100% at 92% 50%,rgba(46,139,46,.25) 0%,transparent 60%);pointer-events:none"></div>
     <div style="position:relative;z-index:1">
       <button class="back-btn" onclick="goTo('welcome')">← Back</button>
       <h2 style="font-size:26px;font-weight:900;color:#fff;letter-spacing:-.6px;margin-bottom:6px">Join the Waitlist</h2>
       <p style="font-size:13px;color:rgba(255,255,255,.5);font-weight:300">Be first when we launch in your area.</p>
     </div>
   </div>
-  <div style="flex:1;overflow-y:auto;padding:22px 20px 60px;max-width:480px;margin:0 auto;width:100%">
-    <div style="display:flex;align-items:flex-start;gap:10px;background:#dcfce7;border:1px solid #86efac;border-radius:12px;padding:13px 16px;margin-bottom:18px;font-size:13px;color:#166534;line-height:1.6">
-      <span style="font-size:17px;flex-shrink:0">✅</span>
-      <div><strong>Live data collection active.</strong> Signups saved to Forminit and emailed via Web3Forms — dual backup on every submission.</div>
-    </div>
-    <div style="background:linear-gradient(135deg,#0d3b0d,#226e22);border-radius:15px;padding:18px;margin-bottom:20px;display:flex;align-items:center;gap:14px">
-      <div style="width:48px;height:48px;min-width:48px;background:rgba(255,255,255,.12);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:21px">⛽</div>
-      <div style="color:#fff">
-        <div style="font-weight:900;font-size:21px;line-height:1;margin-bottom:4px">₦1,015/kg</div>
-        <div style="font-size:12px;opacity:.72;line-height:1.5">Introductory price · Reserve via app · Collect at nearest station<br>+20% more cook time per kg vs traditional LPG</div>
+  <div style="flex:1;display:flex;flex-direction:column;padding:30px 22px 50px;max-width:480px;margin:0 auto;width:100%">
+
+    <!-- Price comparison -->
+    <div style="background:linear-gradient(135deg,#0d3b0d,#226e22);border-radius:15px;padding:20px;margin-bottom:20px">
+      <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#7dd87d;margin-bottom:14px;opacity:.8">💰 Price Comparison</div>
+      <div style="display:flex;gap:12px;margin-bottom:12px">
+        <div style="flex:1;background:rgba(255,255,255,.1);border-radius:11px;padding:14px 10px;text-align:center">
+          <div style="font-size:10px;color:rgba(255,255,255,.6);margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px">Trashformas Biogas</div>
+          <div style="font-weight:900;font-size:26px;color:#fff;line-height:1">₦1,100</div>
+          <div style="font-size:10px;color:#7dd87d;margin-top:4px">per kg</div>
+        </div>
+        <div style="display:flex;align-items:center;color:#7dd87d;font-weight:900;font-size:20px">vs</div>
+        <div style="flex:1;background:rgba(255,255,255,.05);border-radius:11px;padding:14px 10px;text-align:center">
+          <div style="font-size:10px;color:rgba(255,255,255,.6);margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px">Traditional LPG</div>
+          <div style="font-weight:900;font-size:26px;color:rgba(255,255,255,.6);line-height:1">₦1,500</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.45);margin-top:4px">per kg</div>
+        </div>
+      </div>
+      <div style="background:rgba(76,175,80,.2);border-radius:8px;padding:9px 14px;font-size:12px;font-weight:600;color:#aeeaae;text-align:center">
+        🔥 Save ₦400/kg + get 20% more cook time
       </div>
     </div>
-    <div class="sec-label">💡 Monthly Cost Estimate</div>
+
+    <!-- What you get -->
     <div class="card" style="margin-bottom:20px">
-      <div style="display:flex;gap:11px;margin-bottom:13px">
-        <div style="flex:1">
-          <label style="display:block;font-size:12px;font-weight:600;color:rgba(14,26,14,0.5);margin-bottom:6px">Kg/month (traditional)</label>
-          <input type="number" id="calc-kg" class="inp" value="12" min="1" max="200" oninput="calcCost()"/>
-        </div>
-        <div style="flex:1">
-          <label style="display:block;font-size:12px;font-weight:600;color:rgba(14,26,14,0.5);margin-bottom:6px">Household size</label>
-          <select class="inp" onchange="setHousehold(this.value)" style="cursor:pointer">
-            <option value="6">1–2 people</option>
-            <option value="12" selected>3–5 people</option>
-            <option value="22">6+ people</option>
-          </select>
-        </div>
+      <div style="font-size:13px;font-weight:700;color:#0e1a0e;margin-bottom:14px">✅ What waitlist members get</div>
+      <div style="display:flex;flex-direction:column;gap:11px">
+        <div style="display:flex;align-items:flex-start;gap:11px"><span style="font-size:18px;flex-shrink:0">🎯</span><span style="font-size:13.5px;color:rgba(14,26,14,0.8);line-height:1.55">Early access when we launch in your city</span></div>
+        <div style="display:flex;align-items:flex-start;gap:11px"><span style="font-size:18px;flex-shrink:0">💬</span><span style="font-size:13.5px;color:rgba(14,26,14,0.8);line-height:1.55">WhatsApp confirmation & launch updates</span></div>
+        <div style="display:flex;align-items:flex-start;gap:11px"><span style="font-size:18px;flex-shrink:0">💰</span><span style="font-size:13.5px;color:rgba(14,26,14,0.8);line-height:1.55">Locked-in introductory price of ₦1,100/kg</span></div>
+        <div style="display:flex;align-items:flex-start;gap:11px"><span style="font-size:18px;flex-shrink:0">🎁</span><span style="font-size:13.5px;color:rgba(14,26,14,0.8);line-height:1.55">Priority cylinder reservation slots</span></div>
       </div>
-      <div style="background:#f0faf0;border:1px solid #d6f5d6;border-radius:11px;padding:13px 15px;margin-bottom:10px">
-        <div style="display:flex;justify-content:space-between;align-items:center">
-          <span style="font-size:13px;color:rgba(14,26,14,0.5)">Est. monthly cost with Trashformas</span>
-          <span id="calc-result" style="font-weight:900;font-size:19px;color:#1a5c1a">₦10,140</span>
-        </div>
-      </div>
-      <div id="calc-note" style="font-size:12px;color:rgba(14,26,14,0.5);line-height:1.6">💡 With +20% efficiency, <strong>12kg</strong> of Trashformas biogas cooks as much as <strong>~14kg</strong> of traditional LPG.</div>
     </div>
-    <div class="sec-label">📋 Your Details</div>
-    <div class="card">
-      <div style="position:absolute;left:-9999px;opacity:0;pointer-events:none" aria-hidden="true"><input id="hp" tabindex="-1" autocomplete="off"/></div>
-      <div style="margin-bottom:15px">
-        <label style="display:block;font-size:13px;font-weight:600;color:rgba(14,26,14,0.8);margin-bottom:7px">Full Name <span style="color:#e53935">*</span></label>
-        <input type="text" id="f-name" class="inp" placeholder="e.g. Amara Okafor" maxlength="100"/>
+
+    <!-- How it works -->
+    <div class="card" style="margin-bottom:28px;background:#f0faf0;border:1px solid #d6f5d6">
+      <div style="font-size:13px;font-weight:700;color:#0e1a0e;margin-bottom:14px">📱 How to join</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:flex-start;gap:11px"><div style="width:22px;height:22px;min-width:22px;background:#226e22;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff">1</div><span style="font-size:13px;color:rgba(14,26,14,0.8);line-height:1.55">Tap the button below — takes 30 seconds</span></div>
+        <div style="display:flex;align-items:flex-start;gap:11px"><div style="width:22px;height:22px;min-width:22px;background:#226e22;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff">2</div><span style="font-size:13px;color:rgba(14,26,14,0.8);line-height:1.55">Fill your details in our secure Tally form</span></div>
+        <div style="display:flex;align-items:flex-start;gap:11px"><div style="width:22px;height:22px;min-width:22px;background:#226e22;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff">3</div><span style="font-size:13px;color:rgba(14,26,14,0.8);line-height:1.55">Get WhatsApp confirmation instantly</span></div>
+        <div style="display:flex;align-items:flex-start;gap:11px"><div style="width:22px;height:22px;min-width:22px;background:#226e22;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff">4</div><span style="font-size:13px;color:rgba(14,26,14,0.8);line-height:1.55">We notify you when we launch near you</span></div>
       </div>
-      <div style="margin-bottom:15px">
-        <label style="display:block;font-size:13px;font-weight:600;color:rgba(14,26,14,0.8);margin-bottom:7px">Email Address <span style="color:#e53935">*</span></label>
-        <input type="email" id="f-email" class="inp" placeholder="you@example.com" maxlength="254"/>
-      </div>
-      <div style="margin-bottom:15px">
-        <label style="display:block;font-size:13px;font-weight:600;color:rgba(14,26,14,0.8);margin-bottom:7px">WhatsApp Number <span style="color:#e53935">*</span></label>
-        <div style="display:flex">
-          <div style="display:flex;align-items:center;gap:5px;background:#f0faf0;border:1.5px solid #d6f5d6;border-right:none;border-radius:10px 0 0 10px;padding:13px 11px;font-size:13.5px;font-weight:600;color:#1a5c1a;white-space:nowrap;flex-shrink:0">🇳🇬 +234</div>
-          <input type="tel" id="f-wa" class="inp" placeholder="8012345678" maxlength="11" style="border-radius:0 10px 10px 0;flex:1;min-width:0" oninput="this.value=this.value.replace(/\D/g,'')"/>
-        </div>
-        <div style="font-size:11.5px;color:rgba(14,26,14,0.5);margin-top:5px">💬 We'll confirm your spot via WhatsApp</div>
-      </div>
-      <div style="margin-bottom:15px">
-        <label style="display:block;font-size:13px;font-weight:600;color:rgba(14,26,14,0.8);margin-bottom:7px">Location / City <span style="color:#e53935">*</span></label>
-        <input type="text" id="f-loc" class="inp" placeholder="e.g. Lagos, Abuja, Port Harcourt…" maxlength="100"/>
-      </div>
-      <div style="margin-bottom:15px">
-        <label style="display:block;font-size:13px;font-weight:600;color:rgba(14,26,14,0.8);margin-bottom:7px">Estimated Monthly Gas Usage</label>
-        <select id="f-usage" class="inp" style="cursor:pointer;appearance:none;background-image:url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2712%27 height=%278%27 viewBox=%270 0 12 8%27%3E%3Cpath d=%27M1 1l5 5 5-5%27 stroke=%27%232e8b2e%27 stroke-width=%271.5%27 fill=%27none%27 stroke-linecap=%27round%27/%3E%3C/svg%3E');background-repeat:no-repeat;background-position:right 14px center;padding-right:36px">
-          <option value="">Select usage bracket</option>
-          <option value="1-5kg">1–5 kg/month (small household)</option>
-          <option value="6-12kg">6–12 kg/month (medium household)</option>
-          <option value="13-20kg">13–20 kg/month (large household)</option>
-          <option value="20+kg">20+ kg/month (commercial / large)</option>
-        </select>
-      </div>
-      <div style="margin-bottom:22px">
-        <label style="display:block;font-size:13px;font-weight:600;color:rgba(14,26,14,0.8);margin-bottom:7px">How did you hear about us?</label>
-        <select id="f-src" class="inp" style="cursor:pointer;appearance:none;background-image:url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2712%27 height=%278%27 viewBox=%270 0 12 8%27%3E%3Cpath d=%27M1 1l5 5 5-5%27 stroke=%27%232e8b2e%27 stroke-width=%271.5%27 fill=%27none%27 stroke-linecap=%27round%27/%3E%3C/svg%3E');background-repeat:no-repeat;background-position:right 14px center;padding-right:36px">
-          <option value="">Select an option</option>
-          <option>Social media</option>
-          <option>Friend / Family</option>
-          <option>WhatsApp group</option>
-          <option>News article</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <button class="btn-primary" id="submit-btn" onclick="submitForm()" style="justify-content:center;gap:10px">
-        <span id="submit-lbl">🚀 Join the Waitlist</span>
-        <div id="submit-spin" style="display:none;width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite"></div>
-      </button>
-      <p style="text-align:center;font-size:12px;color:rgba(14,26,14,0.5);margin-top:14px;line-height:1.6">🔒 Your information is kept private and only used to notify you about Trashformas.</p>
     </div>
+
+    <!-- Single CTA -->
+    <button class="btn-primary" onclick="openTally()" style="padding:20px;font-size:16px;justify-content:center;gap:12px">
+      <span>🚀 Join the Waitlist Now</span><span style="font-size:20px">→</span>
+    </button>
+    <p style="text-align:center;font-size:12px;color:rgba(14,26,14,0.5);margin-top:14px;line-height:1.6">🔒 Takes 30 seconds · Your info is kept private · No spam</p>
   </div>
 </div>
 
@@ -297,14 +183,16 @@ h1{font-size:clamp(32px,8vw,46px);font-weight:900;line-height:1.05;letter-spacin
 <div id="success" class="screen">
   <div class="success-glow"></div>
   <div class="success-inner">
-    <div class="success-icon">✅</div>
+    <div style="width:78px;height:78px;background:linear-gradient(135deg,#226e22,#3da83d);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:35px;margin:0 auto 26px;box-shadow:0 12px 40px rgba(46,139,46,.45)">✅</div>
     <h2 style="font-size:30px;font-weight:900;letter-spacing:-.8px;margin-bottom:11px">You're on the list!</h2>
-    <p style="font-size:14px;color:rgba(255,255,255,.56);line-height:1.75;margin-bottom:28px;font-weight:300">Welcome to the Trashformas family. We'll reach out via WhatsApp as soon as we launch in your area — get ready to reserve your first pre-filled biogas cylinder!</p>
-    <div class="success-pos">
-      <div class="pos-label">Your Waitlist Position</div>
-      <div class="pos-num" id="pos-num">#1</div>
+    <p style="font-size:14px;color:rgba(255,255,255,.56);line-height:1.75;margin-bottom:28px;font-weight:300">Welcome to the Trashformas family. We'll reach out via WhatsApp as soon as we launch in your area!</p>
+    <div id="pos-box" style="display:none;background:rgba(76,175,80,.1);border:1px solid rgba(76,175,80,.22);border-radius:14px;padding:17px 22px;margin-bottom:16px">
+      <div style="font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:#7dd87d;margin-bottom:7px;font-weight:600">Your Waitlist Position</div>
+      <div id="pos-num" style="font-weight:900;font-size:38px;line-height:1">#1</div>
     </div>
-    <div class="success-note">📬 Saved to Forminit. Confirmation email sent via Web3Forms.</div>
+    <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:13px;padding:13px 17px;margin-bottom:28px;font-size:13px;color:rgba(255,255,255,.5);line-height:1.65">
+      📬 Your signup is recorded. Watch your WhatsApp for updates from Trashformas!
+    </div>
     <div style="display:flex;flex-direction:column;gap:10px">
       <button class="btn-primary" onclick="goTo('explore')" style="justify-content:space-between"><span>Explore the App</span><span>→</span></button>
       <button class="btn-ghost" onclick="goTo('welcome')" style="justify-content:center">← Back to Home</button>
@@ -315,19 +203,24 @@ h1{font-size:clamp(32px,8vw,46px);font-weight:900;line-height:1.05;letter-spacin
 <!-- EXPLORE -->
 <div id="explore" class="screen">
   <div class="dark-hdr">
-    <div class="dark-hdr-glow"></div>
-    <div class="explore-hdr-inner">
-      <div style="display:flex;align-items:center;justify-content:space-between">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 65% 100% at 92% 50%,rgba(46,139,46,.25) 0%,transparent 60%);pointer-events:none"></div>
+    <div style="position:relative;z-index:1">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
         <div class="logo">
-          <svg width="38" height="34" viewBox="0 0 114 102" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M57 4C36 4 18 18 12 38L28 44C32 28 43 20 57 20C71 20 82 28 86 44L72 44L86 58L100 44C94 18 78 4 57 4Z" fill="#1a5c1a"/><path d="M57 98C78 98 96 84 102 64L86 58C82 74 71 82 57 82C43 82 32 74 28 58L42 58L28 44L14 58C20 84 36 98 57 98Z" fill="#8dc63f"/><path d="M28 58L14 58L28 44L42 58Z" fill="#1a5c1a"/><path d="M86 44L100 44L86 58L72 44Z" fill="#8dc63f"/></svg>
-          <span style="font-weight:800;font-size:16px;color:#fff">Trashformas</span>
+          <svg width="34" height="30" viewBox="0 0 100 86" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 43 A45 43 0 0 1 95 43 L75 43 A25 23 0 0 0 25 43 Z" fill="#1A6D19"/>
+            <path d="M75 43 L95 43 L78 60 L62 43 Z" fill="#1A6D19"/>
+            <path d="M95 43 A45 43 0 0 1 5 43 L25 43 A25 23 0 0 0 75 43 Z" fill="#8BB852"/>
+            <path d="M25 43 L5 43 L22 26 L38 43 Z" fill="#8BB852"/>
+          </svg>
+          <span style="font-weight:800;font-size:16px;color:#fff">Trashformas Biogas</span>
         </div>
         <button class="back-btn" style="margin-bottom:0" onclick="goTo('welcome')">← Home</button>
       </div>
-      <div class="explore-stats">
-        <div class="explore-stat"><div class="explore-stat-val">₦1,015</div><div class="explore-stat-lbl">per kg</div></div>
-        <div class="explore-stat"><div class="explore-stat-val">+20%</div><div class="explore-stat-lbl">cook time</div></div>
-        <div class="explore-stat"><div class="explore-stat-val">2/day</div><div class="explore-stat-lbl">max reserve</div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:11px 7px;text-align:center"><div style="font-weight:900;font-size:13px;color:#7dd87d;line-height:1;margin-bottom:2px">₦1,100</div><div style="font-size:9.5px;color:rgba(255,255,255,.42)">biogas/kg</div></div>
+        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:11px 7px;text-align:center"><div style="font-weight:900;font-size:13px;color:#7dd87d;line-height:1;margin-bottom:2px">₦1,500</div><div style="font-size:9.5px;color:rgba(255,255,255,.42)">LPG/kg</div></div>
+        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:11px 7px;text-align:center"><div style="font-weight:900;font-size:13px;color:#7dd87d;line-height:1;margin-bottom:2px">2/day</div><div style="font-size:9.5px;color:rgba(255,255,255,.42)">max reserve</div></div>
       </div>
     </div>
   </div>
@@ -338,88 +231,80 @@ h1{font-size:clamp(32px,8vw,46px);font-weight:900;line-height:1.05;letter-spacin
   <div class="explore-body">
     <div id="panel-features">
       <div class="sec-label">⛽ Gas Pricing</div>
-      <div class="pricing-card">
-        <div class="pricing-title">Trashformas vs Traditional LPG</div>
-        <div class="pricing-cols">
-          <div style="flex:1">
-            <div class="pricing-col-lbl">Trashformas Biogas</div>
-            <div class="pricing-price">₦1,015</div>
-            <div class="pricing-note">per kg · from organic waste</div>
-          </div>
-          <div style="flex:1">
-            <div class="pricing-col-lbl">Traditional LPG</div>
-            <div class="pricing-price">~₦1,200+</div>
-            <div class="pricing-note">market price (rising)</div>
-          </div>
+      <div style="background:linear-gradient(135deg,#0d3b0d,#226e22);border-radius:15px;padding:20px;color:#fff;margin-bottom:20px">
+        <div style="font-size:10px;opacity:.6;text-transform:uppercase;letter-spacing:.8px;margin-bottom:13px;font-weight:700">Trashformas vs Traditional LPG</div>
+        <div style="display:flex;gap:18px">
+          <div style="flex:1"><div style="font-size:10px;opacity:.55;margin-bottom:5px;text-transform:uppercase;letter-spacing:.4px">Trashformas Biogas</div><div style="font-weight:900;font-size:21px;line-height:1;margin-bottom:4px">₦1,100</div><div style="font-size:11px;opacity:.6;line-height:1.4">per kg · from organic waste</div></div>
+          <div style="flex:1"><div style="font-size:10px;opacity:.55;margin-bottom:5px;text-transform:uppercase;letter-spacing:.4px">Traditional LPG</div><div style="font-weight:900;font-size:21px;line-height:1;margin-bottom:4px">₦1,500</div><div style="font-size:11px;opacity:.6;line-height:1.4">per kg · market price</div></div>
         </div>
-        <div class="pricing-tag">💡 +20% more cook time = real savings beyond the price tag</div>
+        <div style="background:rgba(255,255,255,.13);border-radius:8px;padding:5px 11px;font-size:11.5px;font-weight:600;display:inline-block;margin-top:14px">💡 Save ₦400/kg + 20% more cook time</div>
       </div>
       <div class="sec-label">🛠 App Features</div>
-      <div class="feature-list">
-        <div class="card feature-card"><div class="feature-icon" style="background:#e8f5e9">📱</div><div><div class="feature-title">Reserve a Cylinder</div><div class="feature-desc">Order a pre-filled biogas cylinder via the app — max 2 reservations per day.</div><span class="feature-badge badge-live">✅ In Demo</span></div></div>
-        <div class="card feature-card"><div class="feature-icon" style="background:#e0f2fe">📍</div><div><div class="feature-title">GPS Pickup Station Finder</div><div class="feature-desc">Your GPS locates the nearest station, calculates travel time + 5-minute buffer.</div><span class="feature-badge badge-live">✅ In Demo</span></div></div>
-        <div class="card feature-card"><div class="feature-icon" style="background:#fef9c3">📊</div><div><div class="feature-title">Usage Tracker</div><div class="feature-desc">Track monthly consumption and CO₂ savings vs traditional LPG.</div><span class="feature-badge badge-soon">Coming Soon</span></div></div>
-        <div class="card feature-card"><div class="feature-icon" style="background:#ede9fe"></div><div><div class="feature-title">Waste Drop-off &amp; Credits</div><div class="feature-desc">Find organic waste collection points and earn gas credits.</div><span class="feature-badge badge-soon">Coming Soon</span></div></div>
-        <div class="card feature-card"><div class="feature-icon" style="background:#fce7f3">💳</div><div><div class="feature-title">Subscription Plans</div><div class="feature-desc">Lock in ₦1,015/kg with a monthly plan — never run out of gas again.</div><span class="feature-badge badge-soon">Coming Soon</span></div></div>
-        <div class="card feature-card"><div class="feature-icon" style="background:#e8f5e9">📣</div><div><div class="feature-title">Refer &amp; Earn</div><div class="feature-desc">Invite friends and earn free gas credits for every successful referral.</div><span class="feature-badge badge-soon">Coming Soon</span></div></div>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:22px">
+        <div class="card" style="display:flex;gap:13px;align-items:flex-start"><div style="width:46px;height:46px;min-width:46px;background:#e8f5e9;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:21px">📱</div><div><div style="font-weight:800;font-size:14px;margin-bottom:3px">Reserve a Cylinder</div><div style="font-size:13px;color:rgba(14,26,14,0.5);line-height:1.55">Order a pre-filled biogas cylinder via the app — max 2 reservations per day.</div><span class="feature-badge badge-live">✅ In Demo</span></div></div>
+        <div class="card" style="display:flex;gap:13px;align-items:flex-start"><div style="width:46px;height:46px;min-width:46px;background:#e0f2fe;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:21px">📍</div><div><div style="font-weight:800;font-size:14px;margin-bottom:3px">GPS Pickup Station Finder</div><div style="font-size:13px;color:rgba(14,26,14,0.5);line-height:1.55">Your GPS locates the nearest station, calculates travel time + 5-minute buffer.</div><span class="feature-badge badge-live">✅ In Demo</span></div></div>
+        <div class="card" style="display:flex;gap:13px;align-items:flex-start"><div style="width:46px;height:46px;min-width:46px;background:#fef9c3;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:21px">📊</div><div><div style="font-weight:800;font-size:14px;margin-bottom:3px">Usage Tracker</div><div style="font-size:13px;color:rgba(14,26,14,0.5);line-height:1.55">Track monthly consumption and CO₂ savings vs traditional LPG.</div><span class="feature-badge badge-soon">Coming Soon</span></div></div>
+        <div class="card" style="display:flex;gap:13px;align-items:flex-start"><div style="width:46px;height:46px;min-width:46px;background:#ede9fe;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:21px">♻️</div><div><div style="font-weight:800;font-size:14px;margin-bottom:3px">Waste Drop-off & Credits</div><div style="font-size:13px;color:rgba(14,26,14,0.5);line-height:1.55">Find organic waste collection points and earn gas credits.</div><span class="feature-badge badge-soon">Coming Soon</span></div></div>
+        <div class="card" style="display:flex;gap:13px;align-items:flex-start"><div style="width:46px;height:46px;min-width:46px;background:#fce7f3;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:21px">💳</div><div><div style="font-weight:800;font-size:14px;margin-bottom:3px">Subscription Plans</div><div style="font-size:13px;color:rgba(14,26,14,0.5);line-height:1.55">Lock in ₦1,100/kg with a monthly plan — never run out of gas again.</div><span class="feature-badge badge-soon">Coming Soon</span></div></div>
+        <div class="card" style="display:flex;gap:13px;align-items:flex-start"><div style="width:46px;height:46px;min-width:46px;background:#e8f5e9;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:21px">📣</div><div><div style="font-weight:800;font-size:14px;margin-bottom:3px">Refer & Earn</div><div style="font-size:13px;color:rgba(14,26,14,0.5);line-height:1.55">Invite friends and earn free gas credits for every successful referral.</div><span class="feature-badge badge-soon">Coming Soon</span></div></div>
       </div>
       <button class="btn-primary" onclick="goTo('waitlist')"><span>Join the Waitlist</span><span>→</span></button>
     </div>
     <div id="panel-reserve" style="display:none;padding-top:20px">
-      <div class="res-tracker">
-        <div class="res-slot" id="slot-0" style="background:#e8f5e9;border:1px solid #a7f3d0"><div class="res-slot-icon">🟢</div><div class="res-slot-lbl" style="color:#166534">Available</div></div>
-        <div class="res-slot" id="slot-1" style="background:#e8f5e9;border:1px solid #a7f3d0"><div class="res-slot-icon">🟢</div><div class="res-slot-lbl" style="color:#166534">Available</div></div>
-        <div class="card res-info">
-          <div class="res-info-lbl">Today's reservations</div>
-          <div class="res-info-val"><span id="res-count">0</span> <span style="font-size:12px;opacity:.5">/ 2</span></div>
-          <div class="res-info-sub" id="res-sub" style="color:#226e22">2 remaining</div>
+      <div style="display:flex;gap:10px;margin-bottom:18px">
+        <div class="res-slot" id="slot-0" style="background:#e8f5e9;border:1px solid #a7f3d0"><div style="font-size:19px;margin-bottom:2px">🟢</div><div style="font-size:10px;font-weight:700;color:#166534">Available</div></div>
+        <div class="res-slot" id="slot-1" style="background:#e8f5e9;border:1px solid #a7f3d0"><div style="font-size:19px;margin-bottom:2px">🟢</div><div style="font-size:10px;font-weight:700;color:#166534">Available</div></div>
+        <div class="card" style="flex:2.5;padding:11px 13px">
+          <div style="font-size:11px;color:rgba(14,26,14,0.5);margin-bottom:2px">Today's reservations</div>
+          <div style="font-weight:900;font-size:18px"><span id="res-count">0</span> <span style="font-size:12px;opacity:.5">/ 2</span></div>
+          <div id="res-sub" style="font-size:10.5px;color:#226e22;margin-top:2px">2 remaining</div>
         </div>
       </div>
       <div id="step-form">
         <div class="sec-label">🔵 Cylinder Size</div>
-        <div class="size-grid">
-          <button class="size-btn" id="sz-6kg" onclick="selectSize('6kg')" style="background:#1a5c1a;color:#fff;border-color:#226e22"><div class="size-btn-val">6kg</div><div class="size-btn-price">₦6,090</div></button>
-          <button class="size-btn" id="sz-12kg" onclick="selectSize('12.5kg')" style="background:#fff;color:#0e1a0e;border-color:#e0e0e0"><div class="size-btn-val">12.5kg</div><div class="size-btn-price">₦12,688</div></button>
-          <button class="size-btn" id="sz-25kg" onclick="selectSize('25kg')" style="background:#fff;color:#0e1a0e;border-color:#e0e0e0"><div class="size-btn-val">25kg</div><div class="size-btn-price">₦25,375</div></button>
+        <div style="display:flex;gap:8px;margin-bottom:18px">
+          <button id="sz-6kg" onclick="selectSize('6kg')" style="flex:1;background:#1a5c1a;color:#fff;border:2px solid #226e22;border-radius:11px;padding:13px 6px;cursor:pointer;text-align:center;font-family:inherit"><div style="font-weight:900;font-size:16px;margin-bottom:3px">6kg</div><div style="font-size:11px;opacity:.7">₦6,600</div></button>
+          <button id="sz-125kg" onclick="selectSize('12.5kg')" style="flex:1;background:#fff;color:#0e1a0e;border:2px solid #e0e0e0;border-radius:11px;padding:13px 6px;cursor:pointer;text-align:center;font-family:inherit"><div style="font-weight:900;font-size:16px;margin-bottom:3px">12.5kg</div><div style="font-size:11px;opacity:.7">₦13,750</div></button>
+          <button id="sz-25kg" onclick="selectSize('25kg')" style="flex:1;background:#fff;color:#0e1a0e;border:2px solid #e0e0e0;border-radius:11px;padding:13px 6px;cursor:pointer;text-align:center;font-family:inherit"><div style="font-weight:900;font-size:16px;margin-bottom:3px">25kg</div><div style="font-size:11px;opacity:.7">₦27,500</div></button>
         </div>
         <div class="sec-label">🔢 Quantity</div>
-        <div class="card qty-card">
-          <button class="qty-btn" onclick="changeQty(-1)" style="border:1.5px solid #e0e0e0;background:#f5f5f5">−</button>
-          <div class="qty-val"><div class="qty-num" id="qty-num">1</div><div class="qty-lbl">cylinder</div></div>
-          <button class="qty-btn" onclick="changeQty(1)" style="border:1.5px solid #aeeaae;background:#f0faf0;color:#226e22">+</button>
+        <div class="card" style="margin-bottom:18px;display:flex;align-items:center;justify-content:space-between">
+          <button onclick="changeQty(-1)" style="width:42px;height:42px;border-radius:10px;border:1.5px solid #e0e0e0;background:#f5f5f5;font-size:21px;cursor:pointer;display:flex;align-items:center;justify-content:center">−</button>
+          <div style="text-align:center"><div id="qty-num" style="font-weight:900;font-size:30px;line-height:1">1</div><div style="font-size:12px;color:rgba(14,26,14,0.5)">cylinder</div></div>
+          <button onclick="changeQty(1)" style="width:42px;height:42px;border-radius:10px;border:1.5px solid #aeeaae;background:#f0faf0;font-size:21px;cursor:pointer;color:#226e22;display:flex;align-items:center;justify-content:center">+</button>
         </div>
-        <div class="card order-summary">
-          <div class="order-row"><span style="color:rgba(14,26,14,0.5)">Cylinder</span><span id="order-line" style="font-weight:600">1× 6kg @ ₦6,090</span></div>
-          <div class="order-total"><span style="font-weight:700;font-size:15px">Total</span><span id="order-total" style="font-weight:900;font-size:19px;color:#1a5c1a">₦6,090</span></div>
+        <div class="card" style="background:#f0faf0;border:1px solid #d6f5d6;margin-bottom:20px">
+          <div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:14px"><span style="color:rgba(14,26,14,0.5)">Cylinder</span><span id="order-line" style="font-weight:600">1× 6kg @ ₦6,600</span></div>
+          <div style="display:flex;justify-content:space-between;padding-top:10px;border-top:1px solid #d6f5d6"><span style="font-weight:700;font-size:15px">Total</span><span id="order-total" style="font-weight:900;font-size:19px;color:#1a5c1a">₦6,600</span></div>
         </div>
         <button class="btn-primary" id="find-btn" onclick="findStation()"><span>📍 Find Nearest Pickup Station</span><span>→</span></button>
       </div>
       <div id="step-locating" style="display:none">
-        <div class="locating">
-          <div class="spinner"></div>
+        <div style="display:flex;flex-direction:column;align-items:center;padding:50px 0;text-align:center">
+          <div class="spinner-sm"></div>
           <div style="font-weight:800;font-size:17px;margin-bottom:8px">Finding your location…</div>
           <div style="font-size:13px;color:rgba(14,26,14,0.5)">Locating your nearest pickup station</div>
         </div>
       </div>
       <div id="step-result" style="display:none">
-        <div class="station-card">
-          <div class="station-lbl">📍 Nearest Pickup Station</div>
-          <div class="station-name" id="st-name"></div>
-          <div class="station-addr" id="st-addr"></div>
-          <div class="station-stats">
-            <div class="station-stat"><div class="station-stat-icon">📏</div><div class="station-stat-val" id="st-dist"></div><div class="station-stat-lbl">distance</div></div>
-            <div class="station-stat"><div class="station-stat-icon">🚗</div><div class="station-stat-val" id="st-drive"></div><div class="station-stat-lbl">drive time</div></div>
-            <div class="station-stat"><div class="station-stat-icon">⏱️</div><div class="station-stat-val" id="st-buf"></div><div class="station-stat-lbl">incl. 5-min buffer</div></div>
+        <div style="background:linear-gradient(135deg,#0d3b0d,#226e22);border-radius:15px;padding:20px;color:#fff;margin-bottom:16px">
+          <div style="font-size:10px;opacity:.6;text-transform:uppercase;letter-spacing:1.2px;margin-bottom:11px;font-weight:700">📍 Nearest Pickup Station</div>
+          <div id="st-name" style="font-weight:900;font-size:17px;margin-bottom:3px"></div>
+          <div id="st-addr" style="font-size:13px;opacity:.75;margin-bottom:16px"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px">
+            <div style="background:rgba(255,255,255,.12);border-radius:10px;padding:11px 7px;text-align:center"><div style="font-size:17px;margin-bottom:3px">📏</div><div id="st-dist" style="font-weight:900;font-size:13px;line-height:1;margin-bottom:2px"></div><div style="font-size:9.5px;opacity:.6">distance</div></div>
+            <div style="background:rgba(255,255,255,.12);border-radius:10px;padding:11px 7px;text-align:center"><div style="font-size:17px;margin-bottom:3px">🚗</div><div id="st-drive" style="font-weight:900;font-size:13px;line-height:1;margin-bottom:2px"></div><div style="font-size:9.5px;opacity:.6">drive time</div></div>
+            <div style="background:rgba(255,255,255,.12);border-radius:10px;padding:11px 7px;text-align:center"><div style="font-size:17px;margin-bottom:3px">⏱️</div><div id="st-buf" style="font-weight:900;font-size:13px;line-height:1;margin-bottom:2px"></div><div style="font-size:9.5px;opacity:.6">incl. 5-min buffer</div></div>
           </div>
         </div>
-        <div class="buffer-note">⏱️ <strong>5-minute buffer included</strong> — accounts for holdups so your cylinder is ready when you arrive.</div>
-        <div class="card summary-card">
-          <div class="summary-title">Reservation Summary</div>
-          <div class="summary-row"><span style="color:rgba(14,26,14,0.5)">Cylinder</span><span id="sum-cyl" style="font-weight:600"></span></div>
-          <div class="summary-row"><span style="color:rgba(14,26,14,0.5)">Price per cylinder</span><span id="sum-price" style="font-weight:600"></span></div>
-          <div class="summary-row"><span style="color:rgba(14,26,14,0.5)">Total payable</span><span id="sum-total" style="font-weight:600"></span></div>
-          <div class="summary-row"><span style="color:rgba(14,26,14,0.5)">Pickup station</span><span id="sum-st" style="font-weight:600;text-align:right;max-width:55%"></span></div>
-          <div class="summary-row"><span style="color:rgba(14,26,14,0.5)">Estimated arrival</span><span id="sum-arr" style="font-weight:600"></span></div>
+        <div style="background:#fef3c7;border:1px solid #fcd34d;border-radius:11px;padding:11px 15px;margin-bottom:16px;font-size:13px;color:#78350f;line-height:1.65">⏱️ <strong>5-minute buffer included</strong> — accounts for holdups so your cylinder is ready when you arrive.</div>
+        <div class="card" style="background:#f0faf0;border:1px solid #d6f5d6;margin-bottom:18px">
+          <div style="font-weight:800;font-size:14px;margin-bottom:12px">Reservation Summary</div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:9px;font-size:13px"><span style="color:rgba(14,26,14,0.5)">Cylinder</span><span id="sum-cyl" style="font-weight:600"></span></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:9px;font-size:13px"><span style="color:rgba(14,26,14,0.5)">Price per cylinder</span><span id="sum-price" style="font-weight:600"></span></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:9px;font-size:13px"><span style="color:rgba(14,26,14,0.5)">Total payable</span><span id="sum-total" style="font-weight:600"></span></div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:9px;font-size:13px"><span style="color:rgba(14,26,14,0.5)">Pickup station</span><span id="sum-st" style="font-weight:600;text-align:right;max-width:55%"></span></div>
+          <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:rgba(14,26,14,0.5)">Estimated arrival</span><span id="sum-arr" style="font-weight:600"></span></div>
         </div>
         <div style="display:flex;flex-direction:column;gap:10px">
           <button class="btn-primary" onclick="confirmRes()" style="justify-content:center">✅ Confirm Reservation</button>
@@ -427,12 +312,10 @@ h1{font-size:clamp(32px,8vw,46px);font-weight:900;line-height:1.05;letter-spacin
         </div>
       </div>
       <div id="step-confirmed" style="display:none;text-align:center;padding:40px 18px">
-        <div class="confirmed-icon">⛽</div>
+        <div style="width:70px;height:70px;background:linear-gradient(135deg,#226e22,#3da83d);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:31px;margin:0 auto 20px;box-shadow:0 10px 36px rgba(46,139,46,.45)">⛽</div>
         <div style="font-weight:900;font-size:22px;margin-bottom:9px">Cylinder Reserved!</div>
         <p id="confirmed-txt" style="font-size:14px;color:rgba(14,26,14,0.5);line-height:1.7;margin-bottom:22px"></p>
-        <div style="background:#f0faf0;border:1px solid #d6f5d6;border-radius:11px;padding:13px 17px;margin-bottom:20px;font-size:13px;color:rgba(14,26,14,0.5)">
-          🔁 Reservations used today: <strong id="res-used-txt" style="color:#1a5c1a"></strong>
-        </div>
+        <div style="background:#f0faf0;border:1px solid #d6f5d6;border-radius:11px;padding:13px 17px;margin-bottom:20px;font-size:13px;color:rgba(14,26,14,0.5)">🔁 Reservations used today: <strong id="res-used-txt" style="color:#1a5c1a"></strong></div>
         <button onclick="showStep('form')" style="width:100%;background:#f0faf0;border:1px solid #d6f5d6;border-radius:14px;padding:15px;font-size:14px;font-weight:600;cursor:pointer;color:#1a5c1a;font-family:inherit">Make Another Reservation</button>
       </div>
     </div>
@@ -443,14 +326,16 @@ h1{font-size:clamp(32px,8vw,46px);font-weight:900;line-height:1.05;letter-spacin
 <div class="toast" id="toast"></div>
 
 <script>
-// ── Navigation ──
+const TALLY_FORM_ID = 'kdrEYd';
+
+// Navigation
 function goTo(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-// ── Toast ──
+// Toast
 let toastTimer;
 function showToast(msg) {
   const t = document.getElementById('toast');
@@ -460,92 +345,36 @@ function showToast(msg) {
   toastTimer = setTimeout(() => t.classList.remove('show'), 3500);
 }
 
-// ── Calculator ──
-function setHousehold(val) {
-  document.getElementById('calc-kg').value = val;
-  calcCost();
-}
-function calcCost() {
-  const kg = parseFloat(document.getElementById('calc-kg').value) || 0;
-  const cost = Math.round(kg * 0.833 * 1015);
-  const equiv = Math.round(kg * 1.2);
-  document.getElementById('calc-result').textContent = '₦' + cost.toLocaleString();
-  document.getElementById('calc-note').innerHTML = '💡 With +20% efficiency, <strong>' + kg + 'kg</strong> of Trashformas biogas cooks as much as <strong>~' + equiv + 'kg</strong> of traditional LPG.';
-}
-
-// ── Security ──
-function sanitise(s) { return String(s).replace(/[<>'"]/g,'').trim().slice(0,500); }
-function validEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e) && e.length<=254; }
-function validPhone(p) { return /^\d{7,11}$/.test(p); }
-
-let submitAttempts = 0;
-let submitReset = 0;
-
-// ── Form submission ──
-async function submitForm() {
-  if (document.getElementById('hp').value) return;
-  const now = Date.now();
-  if (now > submitReset) { submitAttempts = 0; submitReset = now + 15*60*1000; }
-  if (submitAttempts >= 3) { showToast('⚠️ Too many attempts — please wait 15 minutes'); return; }
-
-  const name  = sanitise(document.getElementById('f-name').value);
-  const email = sanitise(document.getElementById('f-email').value).toLowerCase();
-  const wa    = sanitise(document.getElementById('f-wa').value);
-  const loc   = sanitise(document.getElementById('f-loc').value);
-  const usage = sanitise(document.getElementById('f-usage').value);
-  const src   = sanitise(document.getElementById('f-src').value);
-  const kg    = document.getElementById('calc-kg').value;
-  const cost  = document.getElementById('calc-result').textContent;
-
-  if (!name || name.length<2)    return showToast('⚠️ Please enter your full name');
-  if (!validEmail(email))         return showToast('⚠️ Please enter a valid email address');
-  if (!validPhone(wa))            return showToast('⚠️ Please enter a valid WhatsApp number');
-  if (!loc || loc.length<2)      return showToast('⚠️ Please enter your location');
-
-  submitAttempts++;
-  const btn = document.getElementById('submit-btn');
-  btn.disabled = true;
-  document.getElementById('submit-lbl').style.display = 'none';
-  document.getElementById('submit-spin').style.display = 'block';
-
-  const payload = {
-    Name: name, Email: email, WhatsApp: '+234'+wa,
-    Location: loc, 'Gas Usage': usage||'Not specified',
-    'Heard From': src||'Not specified',
-    'Est kg/mo': kg+'kg', 'Est Cost': cost+'/month',
-    Submitted: new Date().toISOString()
-  };
-
-  try {
-    const [r1,r2] = await Promise.allSettled([
-      fetch('https://forminit.com/f/imrq43myemt',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(payload)}),
-      fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({access_key:'20e4afa7-ff1a-46e8-a900-8da9ddca94c5',subject:'New Trashformas Waitlist Signup — '+name,from_name:'Trashformas Waitlist',...payload})})
-    ]);
-    const ok = (r1.status==='fulfilled'&&r1.value?.ok)||(r2.status==='fulfilled'&&r2.value?.ok);
-    if (ok) {
-      const prev = parseInt(localStorage.getItem('tf_count')||'0',10);
-      localStorage.setItem('tf_count', String(prev+1));
-      document.getElementById('pos-num').textContent = '#'+(prev+1);
-      goTo('success');
-    } else {
-      showToast('⚠️ Something went wrong — please try again');
-    }
-  } catch { showToast('⚠️ Network error — please check your connection'); }
-
-  btn.disabled = false;
-  document.getElementById('submit-lbl').style.display = 'inline';
-  document.getElementById('submit-spin').style.display = 'none';
+// Open Tally popup
+function openTally() {
+  const prev = parseInt(localStorage.getItem('tf_count') || '0', 10);
+  localStorage.setItem('tf_count', String(prev + 1));
+  if (window.Tally) {
+    window.Tally.openPopup(TALLY_FORM_ID, {
+      layout: 'modal',
+      width: 480,
+      onSubmit: () => {
+        const posBox = document.getElementById('pos-box');
+        posBox.style.display = 'block';
+        document.getElementById('pos-num').textContent = '#' + (prev + 1);
+        goTo('success');
+      },
+    });
+  } else {
+    window.open('https://tally.so/r/' + TALLY_FORM_ID, '_blank');
+    goTo('success');
+  }
 }
 
-// ── Tabs ──
+// Tabs
 function switchTab(tab) {
-  document.getElementById('panel-features').style.display = tab==='features'?'block':'none';
-  document.getElementById('panel-reserve').style.display  = tab==='reserve'?'block':'none';
-  document.getElementById('tab-features').className = 'tab '+(tab==='features'?'active':'inactive');
-  document.getElementById('tab-reserve').className  = 'tab '+(tab==='reserve'?'active':'inactive');
+  document.getElementById('panel-features').style.display = tab === 'features' ? 'block' : 'none';
+  document.getElementById('panel-reserve').style.display  = tab === 'reserve'  ? 'block' : 'none';
+  document.getElementById('tab-features').className = 'tab ' + (tab === 'features' ? 'active' : 'inactive');
+  document.getElementById('tab-reserve').className  = 'tab ' + (tab === 'reserve'  ? 'active' : 'inactive');
 }
 
-// ── Reservation ──
+// Reservation
 const STATIONS = [
   {name:'Trashformas Hub — Yaba',        lat:6.5158,lng:3.3724,address:'14 Herbert Macaulay Way, Yaba'},
   {name:'Trashformas Hub — Surulere',    lat:6.4969,lng:3.3481,address:'22 Bode Thomas St, Surulere'},
@@ -553,104 +382,87 @@ const STATIONS = [
   {name:'Trashformas Hub — Lekki Phase 1',lat:6.4314,lng:3.4748,address:'5 Admiralty Way, Lekki'},
   {name:'Trashformas Hub — Ikorodu',     lat:6.6188,lng:3.5091,address:'Ikorodu Rd, Junction Bus Stop'},
 ];
-const PRICES = {'6kg':6090,'12.5kg':12688,'25kg':25375};
+const PRICES = {'6kg':6600,'12.5kg':13750,'25kg':27500};
 const MAX_RES = 2;
 const RES_KEY = 'tf_reservations';
 
-let selSize = '6kg';
-let selQty  = 1;
-let resCount = 0;
-let foundStation = null;
-let foundTravel  = 0;
+let selSize = '6kg', selQty = 1, resCount = 0, foundStation = null, foundTravel = 0;
 
-function todayCount() {
-  try { const d=JSON.parse(localStorage.getItem(RES_KEY)||'{}'); return d[new Date().toDateString()]||0; }
-  catch { return 0; }
-}
-function incRes() {
-  const t=new Date().toDateString(),d=JSON.parse(localStorage.getItem(RES_KEY)||'{}');
-  d[t]=(d[t]||0)+1; localStorage.setItem(RES_KEY,JSON.stringify(d));
-}
-function updateResUI() {
+function todayCount(){try{const d=JSON.parse(localStorage.getItem(RES_KEY)||'{}');return d[new Date().toDateString()]||0;}catch{return 0;}}
+function incRes(){const t=new Date().toDateString(),d=JSON.parse(localStorage.getItem(RES_KEY)||'{}');d[t]=(d[t]||0)+1;localStorage.setItem(RES_KEY,JSON.stringify(d));}
+
+function updateResUI(){
   resCount = todayCount();
   const remaining = MAX_RES - resCount;
   document.getElementById('res-count').textContent = resCount;
-  document.getElementById('res-sub').textContent = remaining>0?remaining+' remaining':'Resets tomorrow';
-  document.getElementById('res-sub').style.color = remaining>0?'#226e22':'#b91c1c';
-  for (let i=0;i<MAX_RES;i++) {
-    const used = i<resCount;
+  document.getElementById('res-sub').textContent = remaining > 0 ? remaining + ' remaining' : 'Resets tomorrow';
+  document.getElementById('res-sub').style.color = remaining > 0 ? '#226e22' : '#b91c1c';
+  for(let i=0;i<MAX_RES;i++){
+    const used = i < resCount;
     const el = document.getElementById('slot-'+i);
-    el.style.background = used?'#fee2e2':'#e8f5e9';
-    el.style.border = '1px solid '+(used?'#fca5a5':'#a7f3d0');
-    el.querySelector('.res-slot-icon').textContent = used?'🔴':'🟢';
-    el.querySelector('.res-slot-lbl').textContent = used?'Used':'Available';
-    el.querySelector('.res-slot-lbl').style.color = used?'#b91c1c':'#166534';
+    el.style.background = used ? '#fee2e2' : '#e8f5e9';
+    el.style.border = '1px solid ' + (used ? '#fca5a5' : '#a7f3d0');
+    el.querySelector('div:first-child').textContent = used ? '🔴' : '🟢';
+    el.querySelector('div:last-child').textContent = used ? 'Used' : 'Available';
+    el.querySelector('div:last-child').style.color = used ? '#b91c1c' : '#166534';
   }
-  const findBtn = document.getElementById('find-btn');
-  if (findBtn) findBtn.disabled = remaining<=0;
 }
 
-function selectSize(sz) {
+function selectSize(sz){
   selSize = sz;
-  ['6kg','12kg','25kg'].forEach(k => {
+  ['6kg','125kg','25kg'].forEach(k=>{
     const el = document.getElementById('sz-'+k);
-    if (el) { el.style.background='#fff'; el.style.color='#0e1a0e'; el.style.borderColor='#e0e0e0'; }
+    if(el){el.style.background='#fff';el.style.color='#0e1a0e';el.style.borderColor='#e0e0e0';}
   });
-  const map = {'6kg':'6kg','12.5kg':'12kg','25kg':'25kg'};
+  const map = {'6kg':'6kg','12.5kg':'125kg','25kg':'25kg'};
   const el = document.getElementById('sz-'+map[sz]);
-  if (el) { el.style.background='#1a5c1a'; el.style.color='#fff'; el.style.borderColor='#226e22'; }
+  if(el){el.style.background='#1a5c1a';el.style.color='#fff';el.style.borderColor='#226e22';}
   updateOrder();
 }
 
-function changeQty(d) {
+function changeQty(d){
   const remaining = MAX_RES - todayCount();
   selQty = Math.max(1, Math.min(remaining||1, selQty+d));
   document.getElementById('qty-num').textContent = selQty;
-  document.getElementById('qty-lbl') && (document.getElementById('qty-lbl').textContent = 'cylinder'+(selQty>1?'s':''));
   updateOrder();
 }
 
-function updateOrder() {
+function updateOrder(){
   const total = PRICES[selSize]*selQty;
   document.getElementById('order-line').textContent = selQty+'× '+selSize+' @ ₦'+PRICES[selSize].toLocaleString();
   document.getElementById('order-total').textContent = '₦'+total.toLocaleString();
 }
 
-function haversine(a,b,c,d) {
-  const R=6371,dL=(c-a)*Math.PI/180,dl=(d-b)*Math.PI/180,
-    x=Math.sin(dL/2)**2+Math.cos(a*Math.PI/180)*Math.cos(c*Math.PI/180)*Math.sin(dl/2)**2;
-  return R*2*Math.atan2(Math.sqrt(x),Math.sqrt(1-x));
-}
-function travelMins(km) { return Math.round((km/25)*60)+5; }
-function fmtMins(m) { return m<60?m+' min':Math.floor(m/60)+'h '+m%60+'min'; }
+function haversine(a,b,c,d){const R=6371,dL=(c-a)*Math.PI/180,dl=(d-b)*Math.PI/180,x=Math.sin(dL/2)**2+Math.cos(a*Math.PI/180)*Math.cos(c*Math.PI/180)*Math.sin(dl/2)**2;return R*2*Math.atan2(Math.sqrt(x),Math.sqrt(1-x));}
+function travelMins(km){return Math.round((km/25)*60)+5;}
+function fmtMins(m){return m<60?m+' min':Math.floor(m/60)+'h '+m%60+'min';}
 
-function showStep(s) {
-  ['form','locating','result','confirmed'].forEach(k => {
-    const el = document.getElementById('step-'+k);
-    if (el) el.style.display = k===s?'block':'none';
+function showStep(s){
+  ['form','locating','result','confirmed'].forEach(k=>{
+    const el=document.getElementById('step-'+k);
+    if(el) el.style.display = k===s?'block':'none';
   });
 }
 
-function findStation() {
+function findStation(){
   const remaining = MAX_RES - todayCount();
-  if (remaining<=0) { showToast('⛔ Daily limit — max '+MAX_RES+' reservations/day'); return; }
+  if(remaining<=0){showToast('⛔ Daily limit — max '+MAX_RES+' reservations/day');return;}
   showStep('locating');
-  function resolve(lat,lng) {
+  function resolve(lat,lng){
     let nearest=null,minD=Infinity;
-    STATIONS.forEach(s=>{ const d=haversine(lat,lng,s.lat,s.lng); if(d<minD){minD=d;nearest=s;} });
-    foundStation = nearest;
-    foundTravel  = travelMins(minD);
-    document.getElementById('st-name').textContent  = nearest.name;
-    document.getElementById('st-addr').textContent  = nearest.address;
-    document.getElementById('st-dist').textContent  = minD.toFixed(1)+' km';
+    STATIONS.forEach(s=>{const d=haversine(lat,lng,s.lat,s.lng);if(d<minD){minD=d;nearest=s;}});
+    foundStation=nearest; foundTravel=travelMins(minD);
+    document.getElementById('st-name').textContent = nearest.name;
+    document.getElementById('st-addr').textContent = nearest.address;
+    document.getElementById('st-dist').textContent = minD.toFixed(1)+' km';
     document.getElementById('st-drive').textContent = fmtMins(foundTravel-5);
-    document.getElementById('st-buf').textContent   = fmtMins(foundTravel);
+    document.getElementById('st-buf').textContent = fmtMins(foundTravel);
     const total = PRICES[selSize]*selQty;
-    document.getElementById('sum-cyl').textContent   = selQty+'× '+selSize;
+    document.getElementById('sum-cyl').textContent = selQty+'× '+selSize;
     document.getElementById('sum-price').textContent = '₦'+PRICES[selSize].toLocaleString();
     document.getElementById('sum-total').textContent = '₦'+total.toLocaleString();
-    document.getElementById('sum-st').textContent    = nearest.name;
-    document.getElementById('sum-arr').textContent   = fmtMins(foundTravel)+' from now';
+    document.getElementById('sum-st').textContent = nearest.name;
+    document.getElementById('sum-arr').textContent = fmtMins(foundTravel)+' from now';
     showStep('result');
   }
   navigator.geolocation.getCurrentPosition(
@@ -659,9 +471,8 @@ function findStation() {
   );
 }
 
-function confirmRes() {
-  incRes();
-  updateResUI();
+function confirmRes(){
+  incRes(); updateResUI();
   const total = PRICES[selSize]*selQty;
   document.getElementById('confirmed-txt').innerHTML =
     'Your '+selQty+'× '+selSize+' cylinder'+(selQty>1?'s are':' is')+' reserved at <strong>'+foundStation.name+'</strong>. Head over — estimated arrival <strong>'+fmtMins(foundTravel)+' from now</strong>.';
@@ -669,9 +480,9 @@ function confirmRes() {
   showStep('confirmed');
 }
 
-// ── Init ──
-calcCost();
+// Init
 updateResUI();
+updateOrder();
 </script>
 </body>
 </html>
